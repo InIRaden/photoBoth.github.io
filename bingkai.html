@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Box - Bingkai</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/JSZip/3.10.1/jszip.min.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Tambahkan library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gifshot/0.3.2/gifshot.min.js"></script>
+
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col">
+
+<header class="bg-white shadow-sm py-4">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+        <div class="flex items-center gap-4">
+            <!-- Tempat logo 1:1 -->
+            <div class="w-12 h-12 flex items-center justify-center bg-blue-800 rounded-xl overflow-hidden">
+                <!-- Ganti dengan gambar logo -->
+                <img src="assets/img/logo.png" alt="Logo" class="w-full h-full object-contain" />
+            </div>
+            <h1 class="text-2xl font-bold text-blue-800">Photo Box</h1>
+        </div>
+        <nav>
+            <a href="index.html" class="px-4 py-2 bg-gray-200 rounded-lg mr-2">Home</a>
+            <a href="bingkai.html" class="px-4 py-2 bg-blue-800 text-white rounded-lg">Bingkai</a>
+        </nav>
+    </div>
+</header>
+
+<main class="flex-grow container mx-auto px-4 py-8">
+    <h2 class="text-xl font-semibold mb-4 text-center">Pilih Bingkai</h2>
+    <div id="resultZone" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+</main>
+
+<!-- Modal -->
+<div id="nameModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+    <div class="bg-white rounded-lg p-6 max-w-md w-full">
+        <h3 class="text-xl font-semibold mb-4">Masukkan Nama</h3>
+        <input type="text" id="folderName" placeholder="Nama Anda" class="w-full px-4 py-2 border rounded-lg mb-4">
+        <div id="loadingGif" class="text-center">
+            <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-800 mx-auto mb-4"></div>
+            <p>Membuat GIF & ZIP...</p>
+        </div>
+        <div class="flex justify-end">
+            <button id="cancelBtn" class="px-4 py-2 bg-gray-300 rounded-lg mr-2">Batal</button>
+            <button id="finishBtn" class="px-4 py-2 bg-blue-800 text-white rounded-lg">Selesai</button>
+        </div>
+    </div>
+</div>
+
+<footer class="bg-gray-800 text-white py-6 text-center">
+    <p>© 2025 Photo Box</p>
+</footer>
+
+<script src="assets/js/bingkai.js"></script>
+</body>
+</html>

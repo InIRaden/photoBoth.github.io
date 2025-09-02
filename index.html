@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Box - Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col">
+
+<header class="bg-white shadow-sm py-4">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+        <div class="flex items-center gap-4">
+            <!-- Tempat logo 1:1 -->
+            <div class="w-12 h-12 flex items-center justify-center bg-blue-800 rounded-xl overflow-hidden">
+                <!-- Ganti dengan gambar logo -->
+                <img src="assets/img/logo.png" alt="Logo" class="w-full h-full object-contain" />
+            </div>
+            <h1 class="text-2xl font-bold text-blue-800">Photo Box</h1>
+        </div>
+        <nav>
+            <a href="index.html" class="px-4 py-2 bg-blue-800 text-white rounded-lg mr-2">Home</a>
+            <a href="bingkai.html" class="px-4 py-2 bg-gray-200 rounded-lg">Bingkai</a>
+        </nav>
+    </div>
+</header>
+
+<main class="flex-grow container mx-auto px-4 py-8">
+    <!-- Carousel -->
+    <div class="max-w-3xl mx-auto mb-10 relative">
+        <div id="carousel" class="relative overflow-hidden rounded-lg shadow-lg bg-gray-100" style="height: 400px;">
+            <div class="carousel-slide active flex items-center justify-center h-full">
+                <img src="assets/img/photo2.jpg" alt="" class="h-full w-full object-cover" />
+            </div>
+            <div class="carousel-slide flex items-center justify-center h-full">
+                <img src="assets/img/photo2.jpg" alt="" class="h-full w-full object-cover" />
+            </div>
+            <div class="carousel-slide flex items-center justify-center h-full">
+                <img src="assets/img/photo1.jpeg" alt="" class="h-full w-full object-cover" />
+            </div>
+        </div>
+        <div class="flex justify-center mt-4">
+            <span class="w-3 h-3 bg-blue-800 rounded-full mx-1 cursor-pointer carousel-dot active"></span>
+            <span class="w-3 h-3 bg-gray-300 rounded-full mx-1 cursor-pointer carousel-dot"></span>
+            <span class="w-3 h-3 bg-gray-300 rounded-full mx-1 cursor-pointer carousel-dot"></span>
+        </div>
+    </div>
+
+    <!-- Upload Area -->
+    <div class="max-w-3xl mx-auto">
+        <div id="dropzone" class="dropzone border-2 border-dashed border-gray-300 rounded-lg p-10 text-center">
+            <p class="mt-2 text-sm text-gray-600">Drag & drop foto Anda di sini</p>
+            <p class="text-xs text-gray-500">atau</p>
+            <button id="fileInputBtn" class="mt-2 px-4 py-2 bg-blue-800 text-white rounded-lg">Pilih File</button>
+            <input type="file" id="fileInput" class="hidden" multiple accept="image/*">
+        </div>
+        <div id="uploadStatus" class="mt-4 text-center text-lg font-semibold text-gray-700"></div>
+<button id="continueToFramesBtn" class="hidden mt-6 px-6 py-3 bg-blue-600 text-white font-bold rounded-lg shadow-md hover:bg-blue-700 transition duration-300 ease-in-out mx-auto block">
+    Lanjutkan ke Bingkai
+</button>
+        <p id="uploadStatus" class="text-center text-gray-500 mt-2"></p>
+    </div>
+</main>
+
+<footer class="bg-gray-800 text-white py-6 text-center">
+    <p>© 2025 Photo Box</p>
+</footer>
+
+<script src="assets/js/home.js"></script>
+</body>
+</html>
