@@ -1,69 +1,64 @@
 const frameTemplates = [
   {
-    src: "assets/framer/bingkai2.png",
+    src: "assets/framer/bingkai.png",
     positions: [
-      { x: 21.4, y: -35, w: 312, h: 265 },
-      { x: 21.4, y: 152, w: 312, h: 265 },
-      { x: 21.4, y: 343, w: 312, h: 265 },
-      { x: 21.4, y: 534, w: 312, h: 265 },
+      { x: 50, y: 10, w:  696, h: 512 },
+      { x: 50, y: 440, w:  696, h: 512 },
+      { x: 50, y: 870, w:  696, h: 512 },
+      { x: 50, y: 1300, w:  696, h: 512 },
     ],
-    size: { w: 355, h: 768 },
+    size: { w: 796, h: 2048 },
   },
-
   {
-    src: "assets/framer/bingkai2.png",
+    src: "assets/framer/bingkai.png",
     positions: [
-      { x: 21.4, y: -35, w: 312, h: 265 },
-      { x: 21.4, y: 152, w: 312, h: 265 },
-      { x: 21.4, y: 343, w: 312, h: 265 },
-      { x: 21.4, y: 534, w: 312, h: 265 },
+      { x: 50, y: 10, w:  696, h: 512 },
+      { x: 50, y: 440, w:  696, h: 512 },
+      { x: 50, y: 870, w:  696, h: 512 },
+      { x: 50, y: 1300, w:  696, h: 512 },
     ],
-    size: { w: 355, h: 768 },
+    size: { w: 796, h: 2048 },
   },
-
   {
-    src: "assets/framer/bingkai2.png",
+    src: "assets/framer/bingkai.png",
     positions: [
-      { x: 21.4, y: -35, w: 312, h: 265 },
-      { x: 21.4, y: 152, w: 312, h: 265 },
-      { x: 21.4, y: 343, w: 312, h: 265 },
-      { x: 21.4, y: 534, w: 312, h: 265 },
+      { x: 50, y: 10, w:  696, h: 512 },
+      { x: 50, y: 440, w:  696, h: 512 },
+      { x: 50, y: 870, w:  696, h: 512 },
+      { x: 50, y: 1300, w:  696, h: 512 },
     ],
-    size: { w: 355, h: 768 },
+    size: { w: 796, h: 2048 },
   },
-
   {
-    src: "assets/framer/bingkai2.png",
+    src: "assets/framer/bingkai.png",
     positions: [
-      { x: 21.4, y: -35, w: 312, h: 265 },
-      { x: 21.4, y: 152, w: 312, h: 265 },
-      { x: 21.4, y: 343, w: 312, h: 265 },
-      { x: 21.4, y: 534, w: 312, h: 265 },
+      { x: 50, y: 10, w:  696, h: 512 },
+      { x: 50, y: 440, w:  696, h: 512 },
+      { x: 50, y: 870, w:  696, h: 512 },
+      { x: 50, y: 1300, w:  696, h: 512 },
     ],
-    size: { w: 355, h: 768 },
+    size: { w: 796, h: 2048 },
   },
-
   {
-    src: "assets/framer/bingkai2.png",
+    src: "assets/framer/bingkai.png",
     positions: [
-      { x: 21.4, y: -35, w: 312, h: 265 },
-      { x: 21.4, y: 152, w: 312, h: 265 },
-      { x: 21.4, y: 343, w: 312, h: 265 },
-      { x: 21.4, y: 534, w: 312, h: 265 },
+      { x: 50, y: 10, w:  696, h: 512 },
+      { x: 50, y: 440, w:  696, h: 512 },
+      { x: 50, y: 870, w:  696, h: 512 },
+      { x: 50, y: 1300, w:  696, h: 512 },
     ],
-    size: { w: 355, h: 768 },
+    size: { w: 796, h: 2048 },
   },
-
   {
-    src: "assets/framer/bingkai2.png",
+    src: "assets/framer/bingkai.png",
     positions: [
-      { x: 21.4, y: -35, w: 312, h: 265 },
-      { x: 21.4, y: 152, w: 312, h: 265 },
-      { x: 21.4, y: 343, w: 312, h: 265 },
-      { x: 21.4, y: 534, w: 312, h: 265 },
+      { x: 50, y: 10, w:  696, h: 512 },
+      { x: 50, y: 440, w:  696, h: 512 },
+      { x: 50, y: 870, w:  696, h: 512 },
+      { x: 50, y: 1300, w:  696, h: 512 },
     ],
-    size: { w: 355, h: 768 },
-  },
+    size: { w: 796, h: 2048 },
+  }, 
 ];
 
 function createFrameCanvas(templateSrc, positions, photoSrcs, size) {
@@ -178,96 +173,209 @@ async function showFramesFromSession() {
     downloadZipWithFrames(nama, selectedFrames, uploads);
   }
 
+  // Yang pertama
+  // async function createThreeSlotGIF(uploads) {
+  //   return new Promise((resolve) => {
+  //     function loadImage(src) {
+  //       return new Promise((res) => {
+  //         const img = new Image();
+  //         img.crossOrigin = "anonymous";
+  //         img.onload = () => res(img);
+  //         img.onerror = () => res(null);
+  //         img.src = src;
+  //       });
+  //     }
+
+  //     function normalizeToSlot(img, targetW, targetH) {
+  //       const tempCanvas = document.createElement("canvas");
+  //       const tctx = tempCanvas.getContext("2d");
+  //       tempCanvas.width = targetW;
+  //       tempCanvas.height = targetH;
+
+  //       const scale = Math.max(targetW / img.width, targetH / img.height);
+  //       const drawW = img.width * scale;
+  //       const drawH = img.height * scale;
+  //       const drawX = (targetW - drawW) / 2;
+  //       const drawY = (targetH - drawH) / 2;
+
+  //       tctx.drawImage(img, drawX, drawY, drawW, drawH);
+  //       return tempCanvas;
+  //     }
+
+  //     (async () => {
+  //       if (!uploads.length) {
+  //         resolve(null);
+  //         return;
+  //       }
+
+  //       // load template PNG sekali
+  //       const template = await loadImage("assets/framer/SG.png");
+  //       if (!template) {
+  //         console.error("Template PNG gagal dimuat!");
+  //         resolve(null);
+  //         return;
+  //       }
+
+  //       // canvas ikut ukuran template
+  //       const canvas = document.createElement("canvas");
+  //       const ctx = canvas.getContext("2d");
+  //       canvas.width = template.width;
+  //       canvas.height = template.height;
+
+  //       // 🔥 pakai koordinat slot dari frameTemplates
+  //       const slotPositions = [
+  //         { x: 0, y: 0, w: 1080, h: 586 }, // slot 1
+  //         { x: 0, y: 590, w: 1080, h: 586 }, // slot 2
+  //         { x: 0, y: 1180, w: 1080, h: 586 }, // slot 3
+  //       ];
+
+  //       const perImage = 2;
+  //       const frameCount = 15 / perImage;
+  //       const gifFrames = [];
+
+  //       for (let f = 0; f < frameCount; f++) {
+  //         ctx.fillStyle = "#000";
+  //         ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  //         for (let sIndex = 0; sIndex < slotPositions.length; sIndex++) {
+  //           const fotoIndex = (f + sIndex) % uploads.length;
+  //           const img = await loadImage(uploads[fotoIndex]);
+  //           if (img) {
+  //             const slot = slotPositions[sIndex];
+  //             const normalized = normalizeToSlot(img, slot.w, slot.h);
+  //             ctx.drawImage(normalized, slot.x, slot.y);
+  //           }
+  //         }
+
+  //         // tempel framer di atas foto
+  //         ctx.drawImage(template, 0, 0, canvas.width, canvas.height);
+
+  //         gifFrames.push(canvas.toDataURL("image/png"));
+  //       }
+
+  //       gifshot.createGIF(
+  //         {
+  //           images: gifFrames,
+  //           gifWidth: canvas.width,
+  //           gifHeight: canvas.height,
+  //           interval: perImage,
+  //           loop: 0,
+  //           numColors: 128,
+  //         },
+  //         function (obj) {
+  //           if (!obj.error) {
+  //             resolve(dataURItoBlob(obj.image));
+  //           } else {
+  //             console.error("Gagal bikin GIF:", obj.error);
+  //             resolve(null);
+  //           }
+  //         }
+  //       );
+  //     })();
+  //   });
+  // }
+
+
+  // Yang Kedua
   async function createThreeSlotGIF(uploads) {
-    return new Promise((resolve) => {
-      function loadImage(src) {
-        return new Promise((res) => {
-          const img = new Image();
-          img.crossOrigin = "anonymous";
-          img.onload = () => res(img);
-          img.onerror = () => res(null);
-          img.src = src;
-        });
+  return new Promise((resolve) => {
+    function loadImage(src) {
+      return new Promise((res) => {
+        const img = new Image();
+        img.crossOrigin = "anonymous";
+        img.onload = () => res(img);
+        img.onerror = () => res(null);
+        img.src = src;
+      });
+    }
+
+    function normalizeToLandscape(img, targetW, targetH) {
+      const tempCanvas = document.createElement("canvas");
+      const tctx = tempCanvas.getContext("2d");
+      tempCanvas.width = targetW;
+      tempCanvas.height = targetH;
+
+      // cover penuh
+      const scale = Math.max(targetW / img.width, targetH / img.height);
+      const drawW = img.width * scale;
+      const drawH = img.height * scale;
+      const drawX = (targetW - drawW) / 2;
+      const drawY = (targetH - drawH) / 2;
+
+      tctx.drawImage(img, drawX, drawY, drawW, drawH);
+      return tempCanvas;
+    }
+
+    (async () => {
+      if (!uploads.length) {
+        resolve(null);
+        return;
       }
 
-      function normalizeToLandscape(img, targetW, targetH) {
-        const tempCanvas = document.createElement("canvas");
-        const tctx = tempCanvas.getContext("2d");
-        tempCanvas.width = targetW;
-        tempCanvas.height = targetH;
+      const slotWidth = 1920;
+      const slotHeight = 1080;
+      const totalHeight = slotHeight * 3;
 
-        // hitung skala biar cover penuh
-        const scale = Math.max(targetW / img.width, targetH / img.height);
-        const drawW = img.width * scale;
-        const drawH = img.height * scale;
-        const drawX = (targetW - drawW) / 2;
-        const drawY = (targetH - drawH) / 2;
+      const canvas = document.createElement("canvas");
+      const ctx = canvas.getContext("2d");
+      canvas.width = slotWidth;
+      canvas.height = totalHeight;
 
-        tctx.drawImage(img, drawX, drawY, drawW, drawH);
-        return tempCanvas;
+      const perImage = 2; // detik per frame
+      const frameCount = 15 / perImage;
+
+      const gifFrames = [];
+
+      // template PNG
+      const template = await loadImage("assets/framer/SG.png");
+
+      for (let f = 0; f < frameCount; f++) {
+        ctx.fillStyle = "#000";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        for (let sIndex = 0; sIndex < 3; sIndex++) {
+          const fotoIndex = (f + sIndex) % uploads.length;
+          const img = await loadImage(uploads[fotoIndex]);
+          if (img) {
+            const normalized = normalizeToLandscape(
+              img,
+              slotWidth,
+              slotHeight
+            );
+            ctx.drawImage(normalized, 0, sIndex * slotHeight);
+          }
+        }
+
+        // tempel template PNG di atas layer foto
+        if (template) {
+          ctx.drawImage(template, 0, 0, canvas.width, canvas.height);
+        }
+
+        gifFrames.push(canvas.toDataURL("image/png"));
       }
 
-      (async () => {
-        if (!uploads.length) {
-          resolve(null);
-          return;
-        }
-
-        const slotWidth = 1920; // landscape width
-        const slotHeight = 1080; // landscape height
-        const totalHeight = slotHeight * 3;
-
-        const canvas = document.createElement("canvas");
-        const ctx = canvas.getContext("2d");
-        canvas.width = slotWidth;
-        canvas.height = totalHeight;
-
-        const perImage = 2; // detik per frame
-        const frameCount = 15 / perImage;
-
-        const gifFrames = [];
-
-        for (let f = 0; f < frameCount; f++) {
-          ctx.fillStyle = "#000";
-          ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-          for (let sIndex = 0; sIndex < 3; sIndex++) {
-            const fotoIndex = (f + sIndex) % uploads.length;
-            const img = await loadImage(uploads[fotoIndex]);
-            if (img) {
-              const normalized = normalizeToLandscape(
-                img,
-                slotWidth,
-                slotHeight
-              );
-              ctx.drawImage(normalized, 0, sIndex * slotHeight);
-            }
+      gifshot.createGIF(
+        {
+          images: gifFrames,
+          gifWidth: canvas.width,
+          gifHeight: canvas.height,
+          interval: perImage,
+          loop: 0,
+          numColors: 128,
+        },
+        function (obj) {
+          if (!obj.error) {
+            resolve(dataURItoBlob(obj.image));
+          } else {
+            console.error("Gagal bikin GIF:", obj.error);
+            resolve(null);
           }
-
-          gifFrames.push(canvas.toDataURL("image/png"));
         }
+      );
+    })();
+  });
+}
 
-        gifshot.createGIF(
-          {
-            images: gifFrames,
-            gifWidth: canvas.width,
-            gifHeight: canvas.height,
-            interval: perImage,
-            loop: 0,
-            numColors: 128, // kompres ukuran file
-          },
-          function (obj) {
-            if (!obj.error) {
-              resolve(dataURItoBlob(obj.image));
-            } else {
-              console.error("Gagal bikin GIF:", obj.error);
-              resolve(null);
-            }
-          }
-        );
-      })();
-    });
-  }
 
   function downloadZipWithFrames(nama, selectedFrames, uploads) {
     const zip = new JSZip();
