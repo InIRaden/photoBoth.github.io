@@ -1,64 +1,64 @@
 const frameTemplates = [
   {
-    src: "assets/framer/bingkai.png",
+    src: "assets/framer/bingkai.png", // untuk mengubah bingkai
     positions: [
-      { x: 50, y: 10, w:  696, h: 512 },
-      { x: 50, y: 440, w:  696, h: 512 },
-      { x: 50, y: 870, w:  696, h: 512 },
-      { x: 50, y: 1300, w:  696, h: 512 },
+      { x: 50, y: 10, w: 696, h: 512 },
+      { x: 50, y: 440, w: 696, h: 512 },
+      { x: 50, y: 870, w: 696, h: 512 },
+      { x: 50, y: 1300, w: 696, h: 512 },
     ],
     size: { w: 796, h: 2048 },
   },
   {
     src: "assets/framer/bingkai.png",
     positions: [
-      { x: 50, y: 10, w:  696, h: 512 },
-      { x: 50, y: 440, w:  696, h: 512 },
-      { x: 50, y: 870, w:  696, h: 512 },
-      { x: 50, y: 1300, w:  696, h: 512 },
+      { x: 50, y: 10, w: 696, h: 512 },
+      { x: 50, y: 440, w: 696, h: 512 },
+      { x: 50, y: 870, w: 696, h: 512 },
+      { x: 50, y: 1300, w: 696, h: 512 },
     ],
     size: { w: 796, h: 2048 },
   },
   {
     src: "assets/framer/bingkai.png",
     positions: [
-      { x: 50, y: 10, w:  696, h: 512 },
-      { x: 50, y: 440, w:  696, h: 512 },
-      { x: 50, y: 870, w:  696, h: 512 },
-      { x: 50, y: 1300, w:  696, h: 512 },
+      { x: 50, y: 10, w: 696, h: 512 },
+      { x: 50, y: 440, w: 696, h: 512 },
+      { x: 50, y: 870, w: 696, h: 512 },
+      { x: 50, y: 1300, w: 696, h: 512 },
     ],
     size: { w: 796, h: 2048 },
   },
   {
     src: "assets/framer/bingkai.png",
     positions: [
-      { x: 50, y: 10, w:  696, h: 512 },
-      { x: 50, y: 440, w:  696, h: 512 },
-      { x: 50, y: 870, w:  696, h: 512 },
-      { x: 50, y: 1300, w:  696, h: 512 },
+      { x: 50, y: 10, w: 696, h: 512 },
+      { x: 50, y: 440, w: 696, h: 512 },
+      { x: 50, y: 870, w: 696, h: 512 },
+      { x: 50, y: 1300, w: 696, h: 512 },
     ],
     size: { w: 796, h: 2048 },
   },
   {
     src: "assets/framer/bingkai.png",
     positions: [
-      { x: 50, y: 10, w:  696, h: 512 },
-      { x: 50, y: 440, w:  696, h: 512 },
-      { x: 50, y: 870, w:  696, h: 512 },
-      { x: 50, y: 1300, w:  696, h: 512 },
+      { x: 50, y: 10, w: 696, h: 512 },
+      { x: 50, y: 440, w: 696, h: 512 },
+      { x: 50, y: 870, w: 696, h: 512 },
+      { x: 50, y: 1300, w: 696, h: 512 },
     ],
     size: { w: 796, h: 2048 },
   },
   {
     src: "assets/framer/bingkai.png",
     positions: [
-      { x: 50, y: 10, w:  696, h: 512 },
-      { x: 50, y: 440, w:  696, h: 512 },
-      { x: 50, y: 870, w:  696, h: 512 },
-      { x: 50, y: 1300, w:  696, h: 512 },
+      { x: 50, y: 10, w: 696, h: 512 },
+      { x: 50, y: 440, w: 696, h: 512 },
+      { x: 50, y: 870, w: 696, h: 512 },
+      { x: 50, y: 1300, w: 696, h: 512 },
     ],
     size: { w: 796, h: 2048 },
-  }, 
+  },
 ];
 
 function createFrameCanvas(templateSrc, positions, photoSrcs, size) {
@@ -275,107 +275,105 @@ async function showFramesFromSession() {
   //   });
   // }
 
-
   // Yang Kedua
   async function createThreeSlotGIF(uploads) {
-  return new Promise((resolve) => {
-    function loadImage(src) {
-      return new Promise((res) => {
-        const img = new Image();
-        img.crossOrigin = "anonymous";
-        img.onload = () => res(img);
-        img.onerror = () => res(null);
-        img.src = src;
-      });
-    }
-
-    function normalizeToLandscape(img, targetW, targetH) {
-      const tempCanvas = document.createElement("canvas");
-      const tctx = tempCanvas.getContext("2d");
-      tempCanvas.width = targetW;
-      tempCanvas.height = targetH;
-
-      // cover penuh
-      const scale = Math.max(targetW / img.width, targetH / img.height);
-      const drawW = img.width * scale;
-      const drawH = img.height * scale;
-      const drawX = (targetW - drawW) / 2;
-      const drawY = (targetH - drawH) / 2;
-
-      tctx.drawImage(img, drawX, drawY, drawW, drawH);
-      return tempCanvas;
-    }
-
-    (async () => {
-      if (!uploads.length) {
-        resolve(null);
-        return;
+    return new Promise((resolve) => {
+      function loadImage(src) {
+        return new Promise((res) => {
+          const img = new Image();
+          img.crossOrigin = "anonymous";
+          img.onload = () => res(img);
+          img.onerror = () => res(null);
+          img.src = src;
+        });
       }
 
-      const slotWidth = 1920;
-      const slotHeight = 1080;
-      const totalHeight = slotHeight * 3;
+      function normalizeToLandscape(img, targetW, targetH) {
+        const tempCanvas = document.createElement("canvas");
+        const tctx = tempCanvas.getContext("2d");
+        tempCanvas.width = targetW;
+        tempCanvas.height = targetH;
 
-      const canvas = document.createElement("canvas");
-      const ctx = canvas.getContext("2d");
-      canvas.width = slotWidth;
-      canvas.height = totalHeight;
+        // cover penuh
+        const scale = Math.max(targetW / img.width, targetH / img.height);
+        const drawW = img.width * scale;
+        const drawH = img.height * scale;
+        const drawX = (targetW - drawW) / 2;
+        const drawY = (targetH - drawH) / 2;
 
-      const perImage = 2; // detik per frame
-      const frameCount = 15 / perImage;
-
-      const gifFrames = [];
-
-      // template PNG
-      const template = await loadImage("assets/framer/SG.png");
-
-      for (let f = 0; f < frameCount; f++) {
-        ctx.fillStyle = "#000";
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-        for (let sIndex = 0; sIndex < 3; sIndex++) {
-          const fotoIndex = (f + sIndex) % uploads.length;
-          const img = await loadImage(uploads[fotoIndex]);
-          if (img) {
-            const normalized = normalizeToLandscape(
-              img,
-              slotWidth,
-              slotHeight
-            );
-            ctx.drawImage(normalized, 0, sIndex * slotHeight);
-          }
-        }
-
-        // tempel template PNG di atas layer foto
-        if (template) {
-          ctx.drawImage(template, 0, 0, canvas.width, canvas.height);
-        }
-
-        gifFrames.push(canvas.toDataURL("image/png"));
+        tctx.drawImage(img, drawX, drawY, drawW, drawH);
+        return tempCanvas;
       }
 
-      gifshot.createGIF(
-        {
-          images: gifFrames,
-          gifWidth: canvas.width,
-          gifHeight: canvas.height,
-          interval: perImage,
-          loop: 0,
-          numColors: 128,
-        },
-        function (obj) {
-          if (!obj.error) {
-            resolve(dataURItoBlob(obj.image));
-          } else {
-            console.error("Gagal bikin GIF:", obj.error);
-            resolve(null);
-          }
+      (async () => {
+        if (!uploads.length) {
+          resolve(null);
+          return;
         }
-      );
-    })();
-  });
-}
 
+        const slotWidth = 480; // mengubah ukuran Frame
+        const slotHeight = 270;
+        const totalHeight = slotHeight * 3;
+
+        const canvas = document.createElement("canvas");
+        const ctx = canvas.getContext("2d");
+        canvas.width = slotWidth;
+        canvas.height = totalHeight;
+
+        const perImage = 1; // detik per frame
+        const frameCount = 15 / perImage;
+
+        const gifFrames = [];
+
+        // template PNG
+        const template = await loadImage("assets/framer/SG.png"); // mengubah bingkai gif
+
+        for (let f = 0; f < frameCount; f++) {
+          ctx.fillStyle = "#000";
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+          for (let sIndex = 0; sIndex < 3; sIndex++) {
+            const fotoIndex = (f + sIndex) % uploads.length;
+            const img = await loadImage(uploads[fotoIndex]);
+            if (img) {
+              const normalized = normalizeToLandscape(
+                img,
+                slotWidth,
+                slotHeight
+              );
+              ctx.drawImage(normalized, 0, sIndex * slotHeight);
+            }
+          }
+
+          // tempel template PNG di atas layer foto
+          if (template) {
+            ctx.drawImage(template, 0, 0, canvas.width, canvas.height);
+          }
+
+          gifFrames.push(canvas.toDataURL("image/png"));
+        }
+
+        gifshot.createGIF(
+          {
+            images: gifFrames,
+            gifWidth: canvas.width,
+            gifHeight: canvas.height,
+            interval: perImage,
+            loop: 0,
+            numColors: 128,
+          },
+          function (obj) {
+            if (!obj.error) {
+              resolve(dataURItoBlob(obj.image));
+            } else {
+              console.error("Gagal bikin GIF:", obj.error);
+              resolve(null);
+            }
+          }
+        );
+      })();
+    });
+  }
 
   function downloadZipWithFrames(nama, selectedFrames, uploads) {
     const zip = new JSZip();
@@ -386,7 +384,7 @@ async function showFramesFromSession() {
         fetch(src)
           .then((res) => res.blob())
           .then((blob) => {
-            zip.file(`${nama}_mentahan_${idx + 1}.png`, blob);
+            zip.file(`${nama}_mentahan_${idx + 1}.png`, blob); // mengubah nama file mentahan
           });
       }
     });
@@ -396,6 +394,7 @@ async function showFramesFromSession() {
       const dataURL = frame.canvas.toDataURL("image/png");
       const b64 = dataURL.split(",")[1];
       zip.file(`hasil_${nama}_frame${frame.index + 1}.png`, b64, {
+        // mengubah nama file frame
         base64: true,
       });
     });
@@ -403,7 +402,7 @@ async function showFramesFromSession() {
     // buat 1 GIF 3 slot (photostrip)
     createThreeSlotGIF(uploads).then((gifBlob) => {
       if (gifBlob) {
-        zip.file(`hasil_${nama}.gif`, gifBlob);
+        zip.file(`hasil_${nama}.gif`, gifBlob); // ubah nama GIF
       }
       zip.generateAsync({ type: "blob" }).then((content) => {
         saveAs(content, `${nama}_photoBox.zip`);
